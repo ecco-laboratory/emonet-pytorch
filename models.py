@@ -67,3 +67,6 @@ class EmoNet(nn.Module):
         x = self.classifier(x)
 
         return x
+
+    def load_state_dict_from_path(self, path):
+        self.load_state_dict(state_dict=torch.load(path))
