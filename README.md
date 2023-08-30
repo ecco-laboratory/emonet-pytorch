@@ -33,7 +33,7 @@ this_emonet = EmoNet()
 this_emonet.load_state_dict_from_path(path_to_weights_file)
 ```
 
-That last command will use the `load_state_dict()` method to read in the PyTorch/numpy-compatible pre-trained weights file, saved as a .pt file. Right now, you need to email me to get a copy of the .pt weights, but we will upload them asap and update the `load_state_dict_from_path()` method to accept a URL, so you can pull the weights directly off the web and into your model instance.
+That last command will use the `load_state_dict()` method to read in the PyTorch/numpy-compatible pre-trained weights file, saved as a .pt file. Right now, you need to separately download the .pt weights [here](https://osf.io/amdju) and input the download path into `load_state_dict_from_path()`. In the future, we will update the method to download the weights on your behalf off of OSF into your model instance.
 
 ### Prerequisite packages
 
