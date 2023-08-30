@@ -1,5 +1,5 @@
 # emonet-pytorch
-EmoNet, as seen in Kragel et al., 2019 (Science Advances), but implemented in PyTorch.
+EmoNet, as seen in [Kragel et al., 2019 (Science Advances)](https://www.science.org/doi/10.1126/sciadv.aaw4358), but implemented in PyTorch.
 
 ## What this is
 
@@ -18,7 +18,7 @@ I converted the model via the following:
 - Converted that python-ONNX model to a PyTorch model instance using onnx2torch v1.5.2 (should work in any version _later_ than this as well)
 - With these now PyTorch-formatted model weights, re-inserted these weights into a slightly more "pythonic" AlexNet architecture (to bring the under-the-hood setup closer to the torchvision native AlexNet architecture)
 
-So, the model works in PyTorch now! However, because of the conversion method, the weights are not in a format compatible with `torchvision.models.alexnet`. Even though EmoNet is an AlexNet model, you have to import it this way, using my code to create a specific PyTorch architecture, not just by importing the weight matrices.
+So, the model works in PyTorch now! However, because of the conversion method, the weights are not in an architecture compatible with `torchvision.models.alexnet`. Even though EmoNet is an AlexNet model, you have to import it this way, using my code to create a specific PyTorch architecture, not just by importing the weight matrices.
 
 ## How to use it
 
