@@ -22,6 +22,19 @@ So, the model works in PyTorch now! However, because of the conversion method, t
 
 ## How to use it
 
+Right now, it's super lightweight (for better or worse). Download this repo (or just the models.py file), and you can reference
+
+```python
+import torch
+from torch import nn
+from models import EmoNet
+
+this_emonet = EmoNet()
+this_emonet.load_state_dict_from_path(path_to_weights_file)
+```
+
+That last command will use the `load_state_dict()` method to read in the PyTorch/numpy-compatible pre-trained weights file, saved as a .pt file. Right now, you need to email me to get a copy of the .pt weights, but we will upload them asap and update the `load_state_dict_from_path()` method to accept a URL, so you can pull the weights directly off the web and into your model instance.
+
 ### Prerequisite packages
 
-
+Importing and using the model only requires pytorch (and its dependencies) to be installed. The model was converted with pytorch v1.12.1, so if you are using it in a newer version of pytorch, you are responsible for checking over any differences in implementation for the Conv2d, ReLU, LocalResponseNorm, and MaxPool2d torch.nn modules used in this architecture.
