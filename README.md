@@ -22,7 +22,7 @@ So, the model works in PyTorch now! However, because of the conversion method, t
 
 ## How to use it
 
-Right now, it's super lightweight (for better or worse). Download this repo (or just the models.py file), and you can reference
+Right now, it's super lightweight (for better or worse). Download this repo, and you can reference
 
 ```python
 import torch
@@ -30,10 +30,18 @@ from torch import nn
 from models import EmoNet
 
 this_emonet = EmoNet()
+this_emonet.load_state_dict_from_web()
+```
+
+That last command will use PyTorch's built in methods to download the  the PyTorch/numpy-compatible pre-trained weights file from [its OSF repo](https://osf.io/amdju) and then read the weights into your active model instance from that local file. 
+
+Once you've downloaded the weights once, you can reference your local copy instead of downloading them every time:
+
+```python
 this_emonet.load_state_dict_from_path(path_to_weights_file)
 ```
 
-That last command will use the `load_state_dict()` method to read in the PyTorch/numpy-compatible pre-trained weights file, saved as a .pt file. Right now, you need to separately download the .pt weights [here](https://osf.io/amdju) and input the download path into `load_state_dict_from_path()`. In the future, we will update the method to download the weights on your behalf off of OSF into your model instance.
+The provided replicate-kragel2019.py example script shows how you can read in a PyTorch-style Dataset containing the Cowen & Keltner (2017) video database that EmoNet was originally trained on, and output its predictions on held-out testing video frames from that stimulus set. (Please note! It currently assumes the videos in the Cowen (2017) folder are sorted into subfolders by their emotion class name.)
 
 ### Prerequisite packages
 
