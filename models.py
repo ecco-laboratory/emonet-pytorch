@@ -70,3 +70,16 @@ class EmoNet(nn.Module):
 
     def load_state_dict_from_path(self, path):
         self.load_state_dict(state_dict=torch.load(path))
+    
+    def load_state_dict_from_web(self,
+                                 download_path: str='emonet_pytorch_weights.pt',
+                                 progress: bool=True):
+
+        torch.hub.download_url_to_file(
+            url='https://osf.io/amdju/download', 
+            dst=download_path, 
+            hash_prefix=None, 
+            progress=progress
+        )
+
+        self.load_state_dict_from_path(path=download_path)
