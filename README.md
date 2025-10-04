@@ -1,15 +1,15 @@
 # emonet-pytorch
-EmoNet, as seen in [Kragel et al., 2019 (Science Advances)](https://www.science.org/doi/10.1126/sciadv.aaw4358), but implemented in PyTorch.
+EmoNet, as seen in [Kragel et al., 2019 (Science Advances)](https://www.science.org/doi/10.1126/sciadv.aaw4358), implemented in PyTorch.
 
 ## What this is
 
-The original EmoNet was created by fine-tuning a [pre-trained AlexNet object recognition model](https://www.mathworks.com/help/deeplearning/ref/alexnet.html) as implemented in Matlab (need to confirm the version, but probably R2017-something).
+The original EmoNet was created by fine-tuning a [pre-trained AlexNet object recognition model](https://www.mathworks.com/help/deeplearning/ref/alexnet.html) as implemented in MATLAB.
 
 This model spec will allow you to spin up a pre-trained instance of EmoNet in PyTorch!
 
 ## How it was made
 
-While AlexNet has one specific architecture, it's implemented using slightly different logic in different neural network packages, so converting the model required more than exporting a matrix of weights from an EmoNet instance using the Matlab Deep Learning Toolbox and importing into Python to paste in as the weights of a torchvision AlexNet instance.
+While AlexNet has one specific architecture, it is implemented using slightly different logic in different neural network packages, so converting the model required more than exporting a matrix of weights from an EmoNet instance using the MATLAB Deep Learning Toolbox and importing into Python to paste in as the weights of a torchvision AlexNet instance.
 
 I converted the model via the following:
 
@@ -22,7 +22,7 @@ So, the model works in PyTorch now! However, because of the conversion method, t
 
 ## How to use it
 
-Right now, it's super lightweight (for better or worse). Download this repo, and you can reference
+Right now, it's super lightweight. Download this repo, and you can reference
 
 ```python
 import torch
